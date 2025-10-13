@@ -354,7 +354,7 @@ We welcome contributions from all team members! Please read our [Contributing Gu
 ## 📞 Contact
 
 **Project Lead**: Saeed  
-📧 Email: saeed@university.ac.uk  
+📧 Email:  240169451@aston.ac.uk  
 🐙 GitHub: [@saeed-moo](https://github.com/saeed-moo)
 
 **Project Links:**
