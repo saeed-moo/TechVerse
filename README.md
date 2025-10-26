@@ -157,14 +157,15 @@ Password: Customer123!
 | **Umm Salma Hamisu** | Database Specialist | [@UmmSalmaHamisu](https://github.com/UmmSalmaHamisu) | 240132950@aston.ac.uk |
 | **Mandeep Singh** | QA Engineer & Tester | [@MandeepSingh](https://github.com/MandeepSingh) | 230107629@aston.ac.uk |
 | **Isaac Yeboah** | DevOps & Deployment | [@Notisaac07](https://github.com/Notisaac07) | 240159991@aston.ac.uk |
-| **Majdi Alkayed** | Feature Developer | [@Whitewolf2001](https://github.com/Whitewolf2001) | majdialkayed19@aston.ac.uk |
+| **Majdi Alkayed** | Feature Developer | [@Whitewolf2001](https://github.com/Whitewolf2001) | majdialkayed19@gmail.com |
 
 ### Team Roles & Responsibilities
 
-**Saeed Moosivand** - *Project Lead*
-- Overall project architecture and design
-- Code reviews and quality assurance
-- Sprint planning and task coordination
+**Saeed Moosivand** - *Project Lead & Full-Stack Developer*
+- Overall project architecture and design(frontend + backend integration)
+- Developed AI-powered customer chatbot and other advanced features
+- Code reviews and ensured software quality standards
+- Sprint planning coordination, managed Trello tasks, and supervised GitHub integration
 - Final deployment and presentation
 
 **Ana Ciobanu** - *Frontend Developer*
@@ -198,10 +199,10 @@ Password: Customer123!
 - Documentation maintenance
 
 **Majdi Alkayed** - *Feature Developer*
-- AI chatbot implementation
+- Developed Analytics Dashboard for real-time business insights
 - Reviews and ratings system
-- Advanced features
-- Third-party integrations
+- Supported backend integration for advanced features and data visualisation
+- Assisted in feature testing and performance improvements
 
 ---
 
@@ -316,26 +317,34 @@ We implement multiple security layers:
 - [x] Project setup & initialization
 - [x] Database schema design
 - [x] Basic authentication system
-- [x] Team onboarding
+- [x] Team onboarding & Git workflow
 
 ### Sprint 2 (Weeks 4-6) 🔄
 - [ ] Product catalog implementation
 - [ ] Shopping basket functionality
 - [ ] Order processing system
 - [ ] Admin dashboard
+- [ ] Design artifacts (ER Diagram, Sitemap, Wireframes, UI Mockups)
 
 ### Sprint 3 (Weeks 7-9) ⏳
 - [ ] AI chatbot integration
 - [ ] Reviews & ratings system
+- [ ] Product return management
 - [ ] Advanced search features
 - [ ] Testing & bug fixes
+- [ ] MVP completion
 
 ### Sprint 4 (Weeks 10-12) 📅
 - [ ] Performance optimization
 - [ ] Security audit
 - [ ] Final testing
 - [ ] Deployment & documentation
-
+ ### Sprints 5-8 (Weeks 1-10)🎯
+- [ ] Advanced features & enhancements
+- [ ] Performance improvements
+- [ ] Security hardening
+- [ ] Comprehensive testing
+- [ ] Production deployment
 ---
 
 ## 🤝 Contributing
