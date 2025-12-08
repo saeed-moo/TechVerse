@@ -1,0 +1,23 @@
+Folder PATH listing for volume OS
+Volume serial number is 80F1-CC47
+C:\PROJECTS\TECHVERSE\APP\HTTP\CONTROLLERS
+|   AboutController.php
+|   ContactController.php
+|   Controller.php
+|   HomeController.php
+|   
++---Admin
+|       DashboardController.php
+|       InventoryController.php
+|       
++---Auth
+|       LoginController.php
+|       RegisterController.php
+|       
+\---Customer
+        BasketController.php
+        CheckoutController.php
+        OrderController.php
+        ProductController.php
+        ProfileController.php
+        
