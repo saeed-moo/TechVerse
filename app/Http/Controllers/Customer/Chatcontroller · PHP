@@ -1,0 +1,165 @@
+<?php
+
+namespace App\Http\Controllers\Customer;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\Models\ChatMessage;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
+
+class ChatController extends Controller
+{
+    /**
+     * Send a message to the AI chatbot
+     */
+    public function send(Request $request)
+    {
+        $request->validate([
+            'message' => 'required|string|max:1000'
+        ]);
+
+        $userId = Auth::id() ?? 'guest_' . session()->getId();
+        $userMessage = $request->message;
+
+        // Save user message
+        $chatMessage = ChatMessage::create([
+            'user_id' => Auth::id(),
+            'session_id' => session()->getId(),
+            'message' => $userMessage,
+            'is_bot' => false
+        ]);
+
+        // Get AI response
+        $botResponse = $this->getAIResponse($userMessage, $userId);
+
+        // Save bot response
+        ChatMessage::create([
+            'user_id' => Auth::id(),
+            'session_id' => session()->getId(),
+            'message' => $botResponse,
+            'is_bot' => true
+        ]);
+
+        return response()->json([
+            'success' => true,
+            'user_message' => $userMessage,
+            'bot_response' => $botResponse,
+            'timestamp' => now()->toIso8601String()
+        ]);
+    }
+
+    /**
+     * Get AI response from OpenAI or fallback to rule-based
+     */
+    private function getAIResponse($message, $userId)
+    {
+        $message = strtolower($message);
+
+        // Check for common queries first (rule-based fallback)
+        $responses = [
+            'hello' => 'Hi there! 👋 Welcome to TechVerse! How can I help you today?',
+            'hi' => 'Hello! How can I assist you with your tech needs?',
+            'help' => 'I can help you with:\n- Finding products\n- Order tracking\n- Returns & refunds\n- Technical specifications\n- Payment options\n\nWhat would you like to know?',
+            'price' => 'To check product prices, please browse our Products page or tell me what you\'re looking for!',
+            'shipping' => 'We offer free shipping on orders over $50. Standard shipping takes 3-5 business days. Express shipping is available for $9.99.',
+            'return' => 'We have a 30-day return policy. Items must be in original condition. Visit our Returns page to start a return request.',
+            'payment' => 'We accept Visa, Mastercard, American Express, PayPal, and Apple Pay.',
+            'track order' => 'To track your order, go to your Orders page and click on the order number.',
+            'contact' => 'You can reach us at support@techverse.com or use our Contact Form. We respond within 24 hours!',
+        ];
+
+        foreach ($responses as $keyword => $response) {
+            if (str_contains($message, $keyword)) {
+                return $response;
+            }
+        }
+
+        // Try OpenAI API if configured
+        if (config('services.openai.key')) {
+            try {
+                return $this->getOpenAIResponse($message);
+            } catch (\Exception $e) {
+                \Log::error('OpenAI API Error: ' . $e->getMessage());
+            }
+        }
+
+        // Default fallback
+        return "I'm here to help! I can assist with product information, orders, shipping, returns, and more. What would you like to know?";
+    }
+
+    /**
+     * Get response from OpenAI API
+     */
+    private function getOpenAIResponse($message)
+    {
+        $response = Http::withHeaders([
+            'Authorization' => 'Bearer ' . config('services.openai.key'),
+            'Content-Type' => 'application/json',
+        ])->post('https://api.openai.com/v1/chat/completions', [
+            'model' => 'gpt-3.5-turbo',
+            'messages' => [
+                [
+                    'role' => 'system',
+                    'content' => 'You are a helpful customer service assistant for TechVerse, an electronics e-commerce store. Be friendly, concise, and helpful. Focus on products like laptops, smartphones, accessories, and tech gadgets.'
+                ],
+                [
+                    'role' => 'user',
+                    'content' => $message
+                ]
+            ],
+            'max_tokens' => 150,
+            'temperature' => 0.7
+        ]);
+
+        if ($response->successful()) {
+            return $response->json()['choices'][0]['message']['content'];
+        }
+
+        throw new \Exception('OpenAI API request failed');
+    }
+
+    /**
+     * Get chat history for current user/session
+     */
+    public function history(Request $request)
+    {
+        $query = ChatMessage::query();
+
+        if (Auth::check()) {
+            $query->where('user_id', Auth::id());
+        } else {
+            $query->where('session_id', session()->getId());
+        }
+
+        $messages = $query->orderBy('created_at', 'asc')
+            ->limit(50)
+            ->get(['message', 'is_bot', 'created_at']);
+
+        return response()->json([
+            'success' => true,
+            'messages' => $messages
+        ]);
+    }
+
+    /**
+     * Clear chat history
+     */
+    public function clear(Request $request)
+    {
+        $query = ChatMessage::query();
+
+        if (Auth::check()) {
+            $query->where('user_id', Auth::id());
+        } else {
+            $query->where('session_id', session()->getId());
+        }
+
+        $query->delete();
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Chat history cleared'
+        ]);
+    }
+}
