@@ -73,6 +73,76 @@ To democratize access to technology by offering an intuitive, secure, and featur
 
 **Legend:**  
 ✅ Complete & Live | 🔄 In Progress | ⏳ Planned for Phase 2
+---
+
+## 📸 Platform Overview
+
+Explore TechVerse's user interface and key features through these screenshots.
+
+### 🏠 Homepage - Light & Dark Mode
+
+Our homepage features a clean, modern design with easy navigation and instant dark mode switching.
+
+<div align="center">
+  <img src="screenshots/homepage-light.png" alt="TechVerse Homepage - Light Mode" width="100%"/>
+  <p><em>Homepage in Light Mode - Showcasing 6 product categories with icons and featured products</em></p>
+</div>
+
+<div align="center">
+  <img src="screenshots/homepage-dark.png" alt="TechVerse Homepage - Dark Mode" width="100%"/>
+  <p><em>Homepage in Dark Mode - Persistent theme preference using localStorage</em></p>
+</div>
+
+---
+
+### 📦 Product Catalog
+
+Browse our extensive collection of 30 real technology products across 6 categories.
+
+<div align="center">
+  <img src="screenshots/products.png" alt="Product Catalog with Real Products" width="100%"/>
+  <p><em>Product grid showing laptops, smartphones, audio equipment, gaming accessories, wearables, and computer accessories</em></p>
+</div>
+
+---
+
+### 🛍️ Product Details & Shopping
+
+Detailed product pages with comprehensive information and seamless basket management.
+
+<div align="center">
+  <img src="screenshots/product-detail.png" alt="Product Detail Page" width="100%"/>
+  <p><em>Product detail page with full specifications, pricing, and add to basket functionality</em></p>
+</div>
+
+<div align="center">
+  <img src="screenshots/basket.png" alt="Shopping Basket with Live Calculations" width="100%"/>
+  <p><em>Dynamic shopping basket with quantity controls, live total calculation, and checkout options</em></p>
+</div>
+
+---
+
+### 💼 Admin Dashboard
+
+Comprehensive admin panel with real-time analytics and inventory management.
+
+<div align="center">
+  <img src="screenshots/admin-dashboard.png" alt="Admin Dashboard with Sales Analytics" width="100%"/>
+  <p><em>Admin dashboard showing £1,649.91 in revenue, order management, inventory tracking, and sales analytics</em></p>
+</div>
+
+---
+
+### 📱 Responsive Design
+
+Fully optimized for mobile devices with a responsive, touch-friendly interface.
+
+<div align="center">
+  <img src="screenshots/mobile.png" alt="Mobile Responsive Design" width="350"/>
+  <p><em>Mobile view showing responsive layout and touch-optimized navigation</em></p>
+</div>
+
+---
 
 ---
 
