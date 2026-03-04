@@ -21,6 +21,12 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
+        'must_change_password',
+        'phone',
+        'address',
+        'city',
+        'postcode',
     ];
 
     /**
@@ -43,6 +49,46 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'must_change_password' => 'boolean',
         ];
+    }
+
+    // Relationships
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+    public function baskets()
+    {
+        return $this->hasMany(Basket::class);
+    }
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+    public function serviceReviews()
+    {
+        return $this->hasMany(ServiceReview::class);
+    }
+    public function returns()
+    {
+        return $this->hasMany(ProductReturn::class);
+    }
+    public function inventoryLogs()
+    {
+        return $this->hasMany(InventoryLog::class);
+    }
+    public function chatMessages()
+    {
+        return $this->hasMany(ChatMessage::class);
+    }
+    // Helper methods
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
+    public function isCustomer()
+    {
+        return $this->role === 'customer';
     }
 }
