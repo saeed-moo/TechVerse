@@ -8,9 +8,11 @@ use App\Models\Basket;
 use App\Models\Order;
 use App\Models\OrderItem;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\OrderConfirmation;
+
 class CheckoutController extends Controller
 {
-
     public function index()
     {
         $basketItems = Basket::with('product')
@@ -56,6 +58,7 @@ class CheckoutController extends Controller
         }
 
         DB::beginTransaction();
+
         try {
             // Calculate total
             $total = $basketItems->sum(function($item) {
@@ -91,10 +94,16 @@ class CheckoutController extends Controller
             // Clear basket
             Basket::where('user_id', auth()->id())->delete();
 
+            // Load order relationships for email
+            $order->load(['user', 'items.product']);
+
+            // Send order confirmation email
+            Mail::to($order->user->email)->send(new OrderConfirmation($order));
+
             DB::commit();
 
             return redirect()->route('orders.show', $order)
-                ->with('success', 'Order placed successfully!');
+                ->with('success', 'Order placed successfully! Check your email for confirmation.');
 
         } catch (\Exception $e) {
             DB::rollBack();
