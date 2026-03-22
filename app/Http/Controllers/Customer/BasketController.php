@@ -54,7 +54,8 @@ class BasketController extends Controller
             ]);
         }
 
-        return back()->with('success', 'Product added to basket!');
+        return redirect()->route('basket.index')
+        ->with('success', 'Product added to basket!');
     }
 
     public function update(Request $request, Basket $basket)
