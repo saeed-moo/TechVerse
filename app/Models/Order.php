@@ -10,18 +10,21 @@ class Order extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id',
-        'order_number',
-        'total_amount',
-        'status',
-        'shipping_address',
-        'shipping_city',
-        'shipping_postcode',
-        'contact_phone',
-        'processed_at',
-        'shipped_at',
-        'delivered_at',
-    ];
+    'user_id',
+    'order_number',
+    'total_amount',
+    'status',
+    'payment_status',
+    'payment_method',
+    'stripe_session_id',
+    'shipping_address',
+    'shipping_city',
+    'shipping_postcode',
+    'contact_phone',
+    'processed_at',
+    'shipped_at',
+    'delivered_at',
+];
 
     protected $casts = [
         'total_amount' => 'decimal:2',
@@ -36,6 +39,13 @@ class Order extends Model
         return $this->belongsTo(User::class);
     }
 
+     /**
+     * Get order items
+     */
+    public function items()
+    {
+        return $this->hasMany(OrderItem::class);
+    }
     public function orderItems()
     {
         return $this->hasMany(OrderItem::class);

@@ -7,6 +7,8 @@ use Illuminate\Database\Seeder;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
+
 class ProductSeeder extends Seeder
 {
     /**
@@ -254,5 +256,20 @@ class ProductSeeder extends Seeder
                 'is_active' => true,
             ]);
         }
+        //
+    DB::table('products')->insert([
+
+     [
+        'name' => 'Apple MacBook Pro 16" M3 Pro',
+       //'category_id' => Categories::where('name', 'Laptops & Computers')->first()->id,
+        'description' => 'High-end powerhouse: Stong CPU/GPU, ideal for heavy task like ......',
+        'price' => 1295.00,
+        'stock_quantity' => 'In stock',
+        'image_path' => '',
+        'featured' => false,
+        'created_at' => now(),
+        'updated_at' => now(),
+     ]
+    ]);
     }
 }
