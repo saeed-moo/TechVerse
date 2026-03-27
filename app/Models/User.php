@@ -82,6 +82,26 @@ class User extends Authenticatable
     {
         return $this->hasMany(ChatMessage::class);
     }
+
+/**
+     * Get the user's wishlist
+     */
+    public function wishlist()
+    {
+        return $this->hasOne(Wishlist::class);
+    }
+
+    /**
+     * Get or create user's wishlist
+     */
+    public function getOrCreateWishlist()
+    {
+        if (!$this->wishlist) {
+            $this->wishlist()->create();
+        }
+        return $this->wishlist;
+    }
+
     // Helper methods
     public function isAdmin()
     {

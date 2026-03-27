@@ -83,6 +83,25 @@ class Product extends Model
         $this->save();
     }
 
+/**
+ * Get the wishlists that contain this product
+ */
+public function wishlists()
+{
+    return $this->belongsToMany(Wishlist::class, 'wishlist_items')
+                ->withTimestamps();
+}
+
+/**
+ * Check if product is in user's wishlist
+ */
+public function isInWishlist($userId)
+{
+    return $this->wishlists()
+                ->where('user_id', $userId)
+                ->exists();
+}
+
     //  filtering
     public function scopeActive($query)
     {

@@ -121,6 +121,37 @@
         </div>
     </div>
 
+{{-- Reviews Section --}}
+<div class="mt-12">
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Reviews & Ratings</h2>
+
+    {{-- Write/Edit Review Form (only for logged-in users) --}}
+    @auth
+        <div id="review-form-container" class="{{ $userReview ? 'hidden' : '' }}">
+            @include('products.reviews._form')
+        </div>
+
+        @if($userReview)
+            <button
+                onclick="document.getElementById('review-form-container').classList.remove('hidden'); document.getElementById('review-form-container').scrollIntoView({ behavior: 'smooth' });"
+                class="mb-6 bg-purple-600 dark:bg-purple-500 text-white px-6 py-2 rounded-lg hover:bg-purple-700 dark:hover:bg-purple-600 transition-colors duration-200 font-semibold"
+            >
+                Edit Your Review
+            </button>
+        @endif
+    @else
+        <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-6 mb-6 text-center">
+            <p class="text-gray-700 dark:text-gray-300 mb-4">Sign in to write a review</p>
+            <a href="{{ route('login') }}" class="inline-block bg-purple-600 dark:bg-purple-500 text-white px-6 py-2 rounded-lg hover:bg-purple-700 dark:hover:bg-purple-600 transition-colors duration-200 font-semibold">
+                Login to Review
+            </a>
+        </div>
+    @endauth
+
+    {{-- Reviews List --}}
+    @include('products.reviews._list')
+    </div>
+
     <!-- Related Products -->
     @if($relatedProducts->count() > 0)
         <div class="mt-16">
@@ -130,8 +161,8 @@
                     <a href="{{ route('products.show', $relatedProduct->slug) }}"
                        class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-3 overflow-hidden group border border-gray-100 dark:border-gray-700">
                         <div class="relative h-48 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                            @if($relatedProduct->image && file_exists(public_path('images/' . $relatedProduct->image)))
-                                <img src="{{ asset('images/' . $relatedProduct->image) }}"
+                            @if($relatedProduct->image && file_exists(public_path('images/products/' . $relatedProduct->image)))
+                                <img src="{{ asset('images/products/' . $relatedProduct->image) }}"
                                      alt="{{ $relatedProduct->name }}"
                                      class="w-full h-full object-cover">
                             @else
