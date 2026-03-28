@@ -111,12 +111,12 @@ Browse our extensive collection of 30 real technology products across 6 categori
 Detailed product pages with comprehensive information and seamless basket management.
 
 <div align="center">
-  <img src="screenshots/product-detail.png" alt="Product Detail Page" width="100%"/>
+  <img src="screenshots/product-details.png" alt="Product Detail Page" width="100%"/>
   <p><em>Product detail page with full specifications, pricing, and add to basket functionality</em></p>
 </div>
 
 <div align="center">
-  <img src="screenshots/basket.png" alt="Shopping Basket with Live Calculations" width="100%"/>
+  <img src="screenshots/shopping-basket.png" alt="Shopping Basket with Live Calculations" width="100%"/>
   <p><em>Dynamic shopping basket with quantity controls, live total calculation, and checkout options</em></p>
 </div>
 
