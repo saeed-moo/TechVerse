@@ -7,9 +7,12 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\WelcomeEmail;
+
 class RegisterController extends Controller
 {
-   public function showRegistrationForm()
+    public function showRegistrationForm()
     {
         return view('auth.register');
     }
@@ -29,8 +32,11 @@ class RegisterController extends Controller
             'role' => 'customer',
         ]);
 
+        // Send welcome email
+        Mail::to($user->email)->send(new WelcomeEmail($user));
+
         Auth::login($user);
 
-        return redirect('/')->with('success', 'Registration successful!');
+        return redirect('/')->with('success', 'Registration successful! Check your email for a welcome message.');
     }
 }

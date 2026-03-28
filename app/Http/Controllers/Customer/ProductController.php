@@ -3,60 +3,84 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
+use App\Services\ProductSearchService;
+use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    protected $searchService;
+
+    public function __construct(ProductSearchService $searchService)
+    {
+        $this->searchService = $searchService;
+    }
+
+    /**
+     * Display a listing of products with advanced filters
+     */
     public function index(Request $request)
     {
-        $query = Product::with('category')->active();
+        $query = $request->input('search');
 
-        // Search by name
-        if ($request->filled('search')) {
-            $query->search($request->search);
-        }
+        $filters = [
+            'min_price' => $request->input('min_price'),
+            'max_price' => $request->input('max_price'),
+            'category' => $request->input('category'),
+            'in_stock' => $request->input('in_stock'),
+            'brand' => $request->input('brand'),
+            'rating' => $request->input('rating'),
+            'sort' => $request->input('sort', 'newest'),
+        ];
 
-        // Filter by category
-        if ($request->filled('category')) {
-            $query->whereHas('category', function($q) use ($request) {
-                $q->where('slug', $request->category);
-            });
-        }
+        // Remove null/empty values
+        $filters = array_filter($filters, fn($value) => $value !== null && $value !== '');
 
-        // Filter by price range
-        if ($request->filled('min_price') && $request->filled('max_price')) {
-            $query->priceRange($request->min_price, $request->max_price);
-        }
+        // Get products using search service
+        $products = $this->searchService->search($query, $filters);
 
-        // Sort
-        $sortBy = $request->get('sort', 'name');
-        if ($sortBy === 'price_low') {
-            $query->orderBy('price', 'asc');
-        } elseif ($sortBy === 'price_high') {
-            $query->orderBy('price', 'desc');
-        } elseif ($sortBy === 'newest') {
-            $query->orderBy('created_at', 'desc');
-        } else {
-            $query->orderBy('name', 'asc');
-        }
-
-        $products = $query->paginate(12);
+        // Get all categories for filter
         $categories = Category::all();
 
-        return view('products.index', compact('products', 'categories'));
+        // Get price range for slider
+        $priceRange = $this->searchService->getPriceRange();
+
+        // Get available brands
+        $brands = $this->searchService->getAvailableBrands();
+
+        return view('products.index', compact(
+            'products',
+            'categories',
+            'priceRange',
+            'brands',
+            'query',
+            'filters'
+        ));
     }
 
-    public function show(Product $product)
-    {
-        $product->load(['category', 'reviews.user']);
-        $relatedProducts = Product::where('category_id', $product->category_id)
-            ->where('id', '!=', $product->id)
-            ->inStock()
-            ->limit(4)
-            ->get();
+/**
+ * Display the specified product
+ */
+public function show(Product $product)
+{
+    $product->load(['category', 'reviews.user']);
 
-        return view('products.show', compact('product', 'relatedProducts'));
+    // Get related products (same category, in stock)
+    $relatedProducts = Product::where('category_id', $product->category_id)
+        ->where('id', '!=', $product->id)
+        ->where('stock_quantity', '>', 0)
+        ->limit(4)
+        ->get();
+
+    // Check if current user has reviewed this product
+    $userReview = null;
+    if (auth()->check()) {
+        $userReview = $product->reviews()
+            ->where('user_id', auth()->id())
+            ->first();
     }
+
+    return view('products.show', compact('product', 'relatedProducts', 'userReview'));
+}
 }
