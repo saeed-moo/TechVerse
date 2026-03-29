@@ -20,13 +20,13 @@ To democratize access to technology by offering an intuitive, secure, and featur
 
 ### 🎉 **Phase 5 Status - March 2026**
 
-✅ **Phase 5 Complete!** Advanced features and final polish delivered
-✅ **Live Deployment:** cs2team69.cs2410-web01pvm.aston.ac.uk
-✅ **30 Products** across 6 categories with real images
-✅ **AI-Powered:** Gemini 2.5 Flash chatbot integration
-✅ **Payment Ready:** Stripe test mode integration
-✅ **Full Testing:** 19 PHPUnit tests, 100% pass rate
-✅ **Team Collaboration:** 20+ merged pull requests, 7 contributors
+- ✅ **Phase 5 Complete!** Advanced features and final polish delivered
+- ✅ **Live Deployment:** cs2team69.cs2410-web01pvm.aston.ac.uk
+-  ✅ **30 Products** across 6 categories with real images
+- ✅ **AI-Powered:** Gemini 2.5 Flash chatbot integration
+- ✅ **Payment Ready:** Stripe test mode integration
+- ✅ **Full Testing:** 19 PHPUnit tests, 100% pass rate
+- ✅ **Team Collaboration:** 20+ merged pull requests, 7 contributors
 
 ### 🎨 Business Identity
 
