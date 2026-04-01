@@ -20,13 +20,13 @@ To democratize access to technology by offering an intuitive, secure, and featur
 
 ### 🎉 **Phase 5 Status - March 2026**
 
-- ✅ **Phase 5 Complete!** Advanced features and final polish delivered
-- ✅ **Live Deployment:** cs2team69.cs2410-web01pvm.aston.ac.uk
--  ✅ **30 Products** across 6 categories with real images
-- ✅ **AI-Powered:** Gemini 2.5 Flash chatbot integration
-- ✅ **Payment Ready:** Stripe test mode integration
-- ✅ **Full Testing:** 19 PHPUnit tests, 100% pass rate
-- ✅ **Team Collaboration:** 20+ merged pull requests, 7 contributors
+-  **Phase 5 Complete!** Advanced features and final polish delivered
+-  **Live Deployment:** cs2team69.cs2410-web01pvm.aston.ac.uk
+-  **30 Products** across 6 categories with real images
+-  **AI-Powered:** Gemini 2.5 Flash chatbot integration
+-  **Payment Ready:** Stripe test mode integration
+-  **Full Testing:** 19 PHPUnit tests, 100% pass rate
+-  **Team Collaboration:** 20+ merged pull requests, 7 contributors
 
 ### 🎨 Business Identity
 
@@ -41,53 +41,53 @@ To democratize access to technology by offering an intuitive, secure, and featur
 
 ### For Customers 🛒
 
-- ✅ User registration & secure login with rate limiting **(LIVE)**
-- ✅ Browse products by category **(LIVE)**
-- ✅ Advanced search & filtering with professional UI **(LIVE)**
-- ✅ Shopping basket management **(LIVE)**
-- ✅ Secure checkout process **(LIVE)**
-- ✅ **Stripe payment gateway** **(LIVE - Test Mode)**
-- ✅ **Order tracking system** **(LIVE)**
-- ✅ **Product reviews & ratings** **(LIVE)**
-- ✅ **Wishlist functionality** **(LIVE)**
-- ✅ **AI-powered chatbot support** **(LIVE)**
-- ✅ **Email notifications** **(LIVE)**
-- ✅ Dark mode toggle with persistence **(LIVE)**
-- ✅ Product images and stock badges **(LIVE)**
-- ✅ Category icons (laptop, phone, headphones, gamepad, watch, mouse) **(LIVE)**
-- ✅ Toast notifications for user feedback **(LIVE)**
-- ✅ Profile management **(LIVE)**
+-  **User registration & secure login with rate limiting** **(LIVE)**
+-  Browse products by category **(LIVE)**
+-  **Advanced search & filtering with professional UI** **(LIVE)**
+-  Shopping basket management **(LIVE)**
+-  Secure checkout process **(LIVE)**
+-  **Stripe payment gateway** **(LIVE - Test Mode)**
+-  **Order tracking system** **(LIVE)**
+-  **Product reviews & ratings** **(LIVE)**
+-  **Wishlist functionality** **(LIVE)**
+-  **AI-powered chatbot support** **(LIVE)**
+-  **Email notifications** **(LIVE)**
+- **Dark mode toggle with persistence**  **(LIVE)**
+-  Product images and stock badges **(LIVE)**
+-  Category icons (laptop, phone, headphones, gamepad, watch, mouse) **(LIVE)**
+-  **Toast notifications for user feedback** **(LIVE)**
+-  Profile management **(LIVE)**
 
 ### For Administrators 👨‍💼
 
-- ✅ Comprehensive admin dashboard **(LIVE)**
-- ✅ **Chart.js analytics with interactive charts** **(LIVE)**
-- ✅ Real-time inventory management **(LIVE)**
-- ✅ **Order management with status updates** **(LIVE)**
-- ✅ Sales analytics and revenue tracking **(LIVE)**
-- ✅ Product management interface **(LIVE)**
-- ✅ Customer account management **(LIVE)**
-- ✅ Best-selling products tracking **(LIVE)**
+- **Comprehensive admin dashboard** **(LIVE)**
+-  **Chart.js analytics with interactive charts** **(LIVE)**
+-  Real-time inventory management **(LIVE)**
+-  **Order management with status updates** **(LIVE)**
+-  Sales analytics and revenue tracking **(LIVE)**
+-  Product management interface **(LIVE)**
+-  Customer account management **(LIVE)**
+-  Best-selling products tracking **(LIVE)**
 
 ### Advanced Features 🚀
 
-- ✅ **AI Chatbot** - Gemini 2.5 Flash powered customer support
-- ✅ **Payment Gateway** - Stripe integration with test mode
-- ✅ **Order Tracking** - Real-time order status updates
-- ✅ **Email Notifications** - Automated order confirmations and updates
-- ✅ **Wishlist System** - Save products for later, move to basket
-- ✅ **Product Reviews** - Customer ratings and feedback with CRUD
-- ✅ **Login Rate Limiting** - Security (5 attempts, 30-minute lockout)
+-  **AI Chatbot** - Gemini 2.5 Flash powered customer support
+-  **Payment Gateway** - Stripe integration with test mode
+-  **Order Tracking** - Real-time order status updates
+-  **Email Notifications** - Automated order confirmations and updates
+-  **Wishlist System** - Save products for later, move to basket
+-  **Product Reviews** - Customer ratings and feedback with CRUD
+-  **Login Rate Limiting** - Security (5 attempts, 30-minute lockout)
 
 ### UI/UX Enhancements 🎨
 
-- ✅ **Toast Notifications** - Real-time user feedback for all actions
-- ✅ **Loading States** - Button animations during form submissions
-- ✅ **Professional Filter Icon** - Sliders icon with smooth animations
-- ✅ **Custom 404 Page** - Branded error handling
-- ✅ **Favicon** - Professional purple/black TV logo
-- ✅ **Chart.js Analytics** - Interactive sales charts in admin dashboard
-- ✅ **Dark Mode** - Full theme support across all pages
+-  **Toast Notifications** - Real-time user feedback for all actions
+-  **Loading States** - Button animations during form submissions
+-  **Professional Filter Icon** - Sliders icon with smooth animations
+-  **Custom 404 Page** - Branded error handling
+-  **Favicon** - Professional purple/black TV logo
+-  **Chart.js Analytics** - Interactive sales charts in admin dashboard
+-  **Dark Mode** - Full theme support across all pages
 
 **Legend:**
 ✅ Complete & Live
@@ -363,11 +363,11 @@ MAIL_MAILER=log
 
 ### **Important Notes:**
 
-- ✅ Vite assets compiled to `/public/build/`
-- ✅ Product images in `/public/images/products/`
-- ✅ Dark mode using Tailwind CSS v4 with class-based strategy
-- ✅ All 30 product images uploaded and optimized
-- ✅ Gemini API and Stripe configured for production
+-  Vite assets compiled to `/public/build/`
+-  Product images in `/public/images/products/`
+-  Dark mode using Tailwind CSS v4 with class-based strategy
+-  All 30 product images uploaded and optimized
+-  **Gemini API and Stripe configured for production**
 
 ---
 
@@ -545,10 +545,10 @@ TechVerse/
 
 ### Branch Protection Rules
 
-- ✅ Main branch requires pull request approval
-- ✅ Admin can bypass for urgent fixes
-- ✅ All team members must use PRs for collaboration
-- ✅ 20+ pull requests successfully merged
+-  Main branch requires pull request approval
+-  Admin can bypass for urgent fixes
+-  All team members must use PRs for collaboration
+-  20+ pull requests successfully merged
 
 ### Creating a Feature
 
@@ -604,18 +604,18 @@ php artisan test tests/Feature/ProductTest.php
 
 ### Testing Coverage
 
-- ✅ **19 PHPUnit tests** - 100% pass rate, 31 assertions, 0.97s execution
-- ✅ **Unit Tests** (12 tests): Basket, Order, Product models
-- ✅ **Feature Tests** (7 tests): Authentication, Product pages, User flows
-- ✅ Manual testing complete for all features
-- ✅ Cross-browser testing (Chrome, Firefox, Safari, Edge)
-- ✅ Mobile responsive testing
+-  **19 PHPUnit tests** - 100% pass rate, 31 assertions, 0.97s execution
+-  **Unit Tests** (12 tests): Basket, Order, Product models
+-  **Feature Tests** (7 tests): Authentication, Product pages, User flows
+-  Manual testing complete for all features
+-  Cross-browser testing (Chrome, Firefox, Safari, Edge)
+-  Mobile responsive testing
 
 **Test Results:**
 
 ```
 Tests:    19 passed (31 assertions)
-Duration: 0.97s
+Duration: 0.97S
 ```
 
 ---
@@ -634,16 +634,16 @@ Duration: 0.97s
 
 We implement multiple security layers:
 
-- ✅ Password hashing (Bcrypt)
-- ✅ CSRF protection on all forms
-- ✅ SQL injection prevention (Eloquent ORM)
-- ✅ XSS protection (Blade escaping)
-- ✅ Input validation & sanitization
-- ✅ Role-based access control (Admin/Customer)
-- ✅ Secure authentication with Laravel
-- ✅ **Login rate limiting** (5 attempts, 30-minute lockout)
-- ✅ Environment variable protection
-- ✅ Stripe PCI-compliant payment processing
+-  Password hashing (Bcrypt)
+-  CSRF protection on all forms
+-  SQL injection prevention (Eloquent ORM)
+-  XSS protection (Blade escaping)
+-  Input validation & sanitization
+-  Role-based access control (Admin/Customer)
+-  Secure authentication with Laravel
+-  **Login rate limiting** (5 attempts, 30-minute lockout)
+-  Environment variable protection
+-  **Stripe PCI-compliant payment processing**
 
 **Found a security issue?** Email: 240169451@aston.ac.uk
 (Please don't create public issues for security vulnerabilities)
@@ -844,40 +844,40 @@ If you find this project helpful, please ⭐ star this repository!
 
 **Key Deliverables:**
 
-- ✅ Project proposal and planning
-- ✅ Database design (ER diagram, 13 tables)
-- ✅ Website sitemap (40+ pages)
-- ✅ Wireframes (8 key pages)
-- ✅ UI mockups (8 pages with full design system)
-- ✅ Phase 1-5 implementation (30 products, full e-commerce + advanced features)
-- ✅ Live deployment on university server
-- ✅ PHPUnit testing suite (19 tests, 100% pass rate)
-- ✅ Final presentation and demo
-- ✅ Team collaboration via Git (20+ merged PRs)
-- ✅ Comprehensive documentation (README, reports, team info)
+-  Project proposal and planning
+-  Database design (ER diagram, 13 tables)
+-  Website sitemap (40+ pages)
+-  Wireframes (8 key pages)
+-  UI mockups (8 pages with full design system)
+-  Phase 1-5 implementation (30 products, full e-commerce + advanced features)
+-  Live deployment on university server
+-  PHPUnit testing suite (19 tests, 100% pass rate)
+-  Final presentation and demo
+-  Team collaboration via Git (20+ merged PRs)
+-  Comprehensive documentation (README, reports, team info)
 
 **Assessment Criteria Met:**
 
-- ✅ **Functionality**: Complete e-commerce system with AI, payments, tracking
-- ✅ **Design**: Professional UI with dark mode and responsive layout
-- ✅ **Database**: Well-structured schema with proper relationships (13 tables)
-- ✅ **Teamwork**: Clear roles, collaborative Git workflow, regular meetings
-- ✅ **Testing**: Comprehensive test suite with 100% pass rate
-- ✅ **Security**: Rate limiting, CSRF protection, input validation
-- ✅ **Innovation**: AI chatbot, real-time analytics, advanced features
-- ✅ **Documentation**: Comprehensive README, code comments, deployment guide
-- ✅ **Presentation**: Live demo showcasing all features
+-  **Functionality**: Complete e-commerce system with AI, payments, tracking
+-  **Design**: Professional UI with dark mode and responsive layout
+-  **Database**: Well-structured schema with proper relationships (13 tables)
+-  **Teamwork**: Clear roles, collaborative Git workflow, regular meetings
+-  **Testing**: Comprehensive test suite with 100% pass rate
+-  **Security**: Rate limiting, CSRF protection, input validation
+-  **Innovation**: AI chatbot, real-time analytics, advanced features
+-  **Documentation**: Comprehensive README, code comments, deployment guide
+-  **Presentation**: Live demo showcasing all features
 
 **Technical Achievements:**
 
-- ✅ AI Integration (Gemini 2.5 Flash)
-- ✅ Payment Processing (Stripe)
-- ✅ Real-time Features (order tracking, notifications)
-- ✅ Data Visualization (Chart.js analytics)
-- ✅ Automated Testing (PHPUnit)
-- ✅ Professional UI/UX (toast notifications, loading states)
-- ✅ Security Features (rate limiting, authentication)
-- ✅ Email Automation (Laravel Mail)
+-  **AI Integration (Gemini 2.5 Flash)**
+-  **Payment Processing (Stripe)**
+-  **Real-time Features (order tracking, notifications)**
+- **Data Visualization (Chart.js analytics)**
+-  **Automated Testing (PHPUnit)**
+-  **Professional UI/UX (toast notifications, loading states)**
+- **Security Features (rate limiting, authentication)**
+- **Email Automation (Laravel Mail)**
 
 ---
 
